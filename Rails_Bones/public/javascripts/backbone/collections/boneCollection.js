@@ -1,5 +1,6 @@
 var BonesApp = BonesApp || { Models: {}, Collections: {}, Views: {} };
 
 BonesApp.Collections.BoneCollection = Backbone.Collection.extend({
-  model: BonesApp.Models.Bone
+  model: BonesApp.Models.Bone,
+  url: '/bones'
 });
