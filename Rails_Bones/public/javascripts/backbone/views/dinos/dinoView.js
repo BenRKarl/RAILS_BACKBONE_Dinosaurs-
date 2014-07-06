@@ -52,7 +52,7 @@ BonesApp.Views.DinoView = Backbone.View.extend({
     var newBoneSize = boneSizeField.val();
     boneNameField.val('');
     boneSizeField.val('');
-    this.model.get('bones').add({
+    this.model.get('bones').create({
       name: newBoneName,
       size: newBoneSize
     });
