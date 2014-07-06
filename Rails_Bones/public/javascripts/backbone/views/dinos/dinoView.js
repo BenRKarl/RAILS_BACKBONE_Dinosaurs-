@@ -40,7 +40,7 @@ BonesApp.Views.DinoView = Backbone.View.extend({
       that.model.set('name', newName);
       that.model.set('species', newSpecies);
       that.model.set('size', newSize);
-      // that.model.save();
+      that.model.save();
     })
     return this;
   },

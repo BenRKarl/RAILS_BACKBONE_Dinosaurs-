@@ -10,7 +10,7 @@ BonesApp.initialize = function(){
     collection: dinos
   });
 
-  // dinos.fetch();
+  dinos.fetch();
 
   $('.dino-form').on('submit', function(event){
     event.preventDefault();
@@ -21,7 +21,7 @@ BonesApp.initialize = function(){
     var sizeField = $('form.dino-form input.dino-size');
     var newSize = sizeField.val();
     var newDino = new BonesApp.Models.Dino({name: newName, species: newSpecies, size: newSize})
-    dinos.add(newDino);
+    dinos.save(newDino);
     nameField.val("");
     speciesField.val("");
     sizeField.val("");
