@@ -30,7 +30,7 @@ BonesApp.Views.BoneView = Backbone.View.extend({
       var newName = nameField.val();
       var sizeField = that.$el.find('.edit-size');
       var newSize = sizeField.val();
-      that.model.set({name: newName, size: newSize});
+      that.model.save({name: newName, size: newSize});
     });
     return this;
   }
