@@ -20,8 +20,8 @@ BonesApp.initialize = function(){
     var newSpecies = speciesField.val();
     var sizeField = $('form.dino-form input.dino-size');
     var newSize = sizeField.val();
-    var newDino = new BonesApp.Models.Dino({name: newName, species: newSpecies, size: newSize})
-    dinos.save(newDino);
+    var newDino = new BonesApp.Models.Dino({name: newName, species: newSpecies, size: newSize});
+    dinos.create(newDino);
     nameField.val("");
     speciesField.val("");
     sizeField.val("");
