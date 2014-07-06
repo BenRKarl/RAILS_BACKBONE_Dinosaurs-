@@ -11,5 +11,13 @@ BonesApp.Views.BoneView = Backbone.View.extend({
     var renderedHTML = this.template(this.model.attributes);
     this.$el.html(renderedHTML);
     return this;
+  },
+  events:{
+    'click [data-action="delete-bone"]': 'deleteBone',
+    'click [data-action="edit-bone"]': 'editBone'
+  },
+  deleteBone: function(){
+    this.model.destroy();
+    return this;
   }
 });
