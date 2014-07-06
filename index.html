@@ -9,6 +9,19 @@
   <script type="text/javascript" src="libraries/backbone.js"></script>
 
   <!-- TEMPLATES -->
+  <script type="text/template" class="dino-template">
+    <strong><%- name %></strong>: is a <%- size %> <%- species %>
+    <button data-action="delete">Delete Dino</button>
+    <button data-action="edit">Edit Dino</button>
+  </script>
+
+  <script type="text/template" class="edit-dino-template">
+    <form>
+      <input type="text" placeholder="<%- name %>">
+      <input type="text" placeholder="<%- size %>">
+      <input type="text" placeholder="<%- species %>">
+    </form>
+  </script>
 
   <!-- THE APP -->
   <script type="text/javascript" src="backbone/app.js"></script>
@@ -22,16 +35,19 @@
   <script type="text/javascript" src="backbone/collections/boneCollection.js"></script>
 
   <!-- VIEWS -->
-  <script type="text/javascript" src="backbone/views/dinoView.js"></script>
-  <script type="text/javascript" src="backbone/views/dinoListView.js"></script>
-  <script type="text/javascript" src="backbone/views/boneView.js"></script>
-  <script type="text/javascript" src="backbone/views/boneListView.js"></script>
+  <script type="text/javascript" src="backbone/views/dinos/dinoView.js"></script>
+  <script type="text/javascript" src="backbone/views/dinos/dinoListView.js"></script>
+  <script type="text/javascript" src="backbone/views/bones/boneView.js"></script>
+  <script type="text/javascript" src="backbone/views/bones/boneListView.js"></script>
 
 </head>
 <body>
 
   <form class="dino-form">
-    <input type="text" name="dino-name" placeholder="Enter the dino's name">
+    <input type="text" class="dino-name" placeholder="Enter the dino's name">
+    <input type="text" class="dino-species" placeholder="Enter the dino's species">
+    <input type="text" class="dino-size" placeholder="Enter the dino's size">
+    <input type="submit" value="Add Dino">
   </form>
 
   <ul class="dino-list">
