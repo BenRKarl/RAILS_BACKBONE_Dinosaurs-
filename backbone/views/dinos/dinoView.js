@@ -56,5 +56,10 @@ BonesApp.Views.DinoView = Backbone.View.extend({
       name: newBoneName,
       size: newBoneSize
     });
+    var newBoneListView = new BonesApp.Views.BoneListView({
+      collection: this.model.get('bones'),
+      el: this.$el.find('.bone-list')
+    })
+    newBoneListView.render()
   }
 });
