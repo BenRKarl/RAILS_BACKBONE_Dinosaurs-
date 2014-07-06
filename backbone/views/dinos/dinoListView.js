@@ -6,7 +6,7 @@ BonesApp.Views.DinoListView = Backbone.View.extend({
   },
   render: function(){
     var that = this;
-    this.$el.empty();
+    // this.$el.empty();
     _.each(this.collection.models, function(dino){
       var newDinoView = new BonesApp.Views.DinoView({ model: dino });
       that.$el.append( newDinoView.render().el );

@@ -6,7 +6,6 @@ BonesApp.Views.DinoView = Backbone.View.extend({
     this.listenTo(this.model, 'change', this.render);
   },
   tagName: 'li',
-  addBoneTemplate: _.template($('.edit-bone-template').html()),
   editTemplate: _.template($('.edit-dino-template').html()),
   template: _.template($('.dino-template').html()),
   render: function(){
@@ -20,7 +19,8 @@ BonesApp.Views.DinoView = Backbone.View.extend({
   },
   events:{
     'click [data-action="delete"]': 'deleteDino',
-    'click [data-action="edit"]': 'renderDinoEditForm'
+    'click [data-action="edit"]': 'renderDinoEditForm',
+    'click [data-action="add-bone"]': 'addBone'
   },
   deleteDino: function(){
     this.model.destroy();
@@ -43,5 +43,18 @@ BonesApp.Views.DinoView = Backbone.View.extend({
       // that.model.save();
     })
     return this;
+  },
+  addBone: function(event){
+    event.preventDefault();
+    var boneNameField = this.$el.find('.bone-name');
+    var newBoneName = boneNameField.val();
+    var boneSizeField = this.$el.find('.bone-size');
+    var newBoneSize = boneSizeField.val();
+    boneNameField.val('');
+    boneSizeField.val('');
+    this.model.get('bones').add({
+      name: newBoneName,
+      size: newBoneSize
+    });
   }
 });
