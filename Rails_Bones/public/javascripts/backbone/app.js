@@ -11,6 +11,7 @@ BonesApp.initialize = function(){
   });
 
   dinos.fetch();
+  bones.fetch();
 
   $('.dino-form').on('submit', function(event){
     event.preventDefault();
