@@ -11,11 +11,19 @@ BonesApp.Views.DinoView = Backbone.View.extend({
   render: function(){
     var renderedHTML = this.template(this.model.attributes);
     this.$el.html(renderedHTML);
+debugger;
+    var boneCollectionView = new BonesApp.Views.BoneListView({
+      collection: this.model.get('bones'),
+      el: this.$el.find('.bones-list')
+    });
+
+
     return this;
   },
   events:{
     'click [data-action="delete"]': 'deleteDino',
-    'click [data-action="edit"]': 'renderDinoEditForm'
+    'click [data-action="edit"]': 'renderDinoEditForm',
+    'click [data-action="add-bone"]': 'renderNewBoneForm'
   },
   deleteDino: function(){
     this.model.destroy();
@@ -38,5 +46,8 @@ BonesApp.Views.DinoView = Backbone.View.extend({
       // that.model.save();
     })
     return this;
+  },
+  renderNewBoneForm: function(){
+    var that = this;
   }
 });

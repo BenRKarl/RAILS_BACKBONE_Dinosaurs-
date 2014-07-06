@@ -8,11 +8,14 @@
   <script type="text/javascript" src="libraries/underscore.js"></script>
   <script type="text/javascript" src="libraries/backbone.js"></script>
 
-  <!-- TEMPLATES -->
+  <!-- DINO TEMPLATES -->
   <script type="text/template" class="dino-template">
     <strong><%- name %></strong>: is a <%- size %> <%- species %>
     <button data-action="delete">Delete Dino</button>
     <button data-action="edit">Edit Dino</button>
+    <button data-action="add-bone">Add Bone</button>
+    <ul class="bone-list">
+    </ul>
   </script>
 
   <script type="text/template" class="edit-dino-template">
@@ -21,6 +24,21 @@
       <input class="edit-size" type="text" value="<%- size %>">
       <input class="edit-species" type="text" value="<%- species %>">
       <input type="submit" value="Submit Edits">
+    </form>
+  </script>
+
+  <!-- BONE TEMPLATES -->
+  <script type="text/template" class="bone-template">
+    <strong><%- name %></strong>: <%- size %>
+    <button data-action="delete-bone">Delete Bone</button>
+    <button data-action="edit-bone">Edit Bone</button>
+  </script>
+
+  <script type="text/template" class="edit-bone-template">
+    <form class=".edit-form">
+      <input class="edit-name" type="text" value="<%- name %>">
+      <input class="edit-size" type="text" value="<%- size %>">
+      <input type="submit" value="Submit Bone">
     </form>
   </script>
 
