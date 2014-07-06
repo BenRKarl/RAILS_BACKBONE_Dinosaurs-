@@ -11,5 +11,12 @@ BonesApp.Views.DinoView = Backbone.View.extend({
     var renderedHTML = this.template(this.model.attributes);
     this.$el.html(renderedHTML);
     return this;
+  },
+  events:{
+    'click [data-action="delete"]': 'deleteDino'
+  },
+  deleteDino: function(){
+    this.model.destroy();
+    return this;
   }
 });
