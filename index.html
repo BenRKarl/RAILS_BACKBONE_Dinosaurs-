@@ -16,10 +16,11 @@
   </script>
 
   <script type="text/template" class="edit-dino-template">
-    <form>
-      <input type="text" placeholder="<%- name %>">
-      <input type="text" placeholder="<%- size %>">
-      <input type="text" placeholder="<%- species %>">
+    <form class=".edit-form">
+      <input class="edit-name" type="text" value="<%- name %>">
+      <input class="edit-size" type="text" value="<%- size %>">
+      <input class="edit-species" type="text" value="<%- species %>">
+      <input type="submit" value="Submit Edits">
     </form>
   </script>
 

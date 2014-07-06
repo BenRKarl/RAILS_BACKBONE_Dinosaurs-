@@ -22,9 +22,9 @@ BonesApp.initialize = function(){
     var newSize = sizeField.val();
     var newDino = new BonesApp.Models.Dino({name: newName, species: newSpecies, size: newSize})
     dinos.add(newDino);
-    nameField.empty();
-    speciesField.empty();
-    sizeField.empty();
+    nameField.val("");
+    speciesField.val("");
+    sizeField.val("");
   });
 }
 
