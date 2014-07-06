@@ -7,6 +7,7 @@ BonesApp.Views.BoneView = Backbone.View.extend({
   },
   tagName: 'li',
   template: _.template($('.bone-template').html()),
+  editBoneTemplate: _.template($('.edit-bone-template').html()),
   render: function(){
     var renderedHTML = this.template(this.model.attributes);
     this.$el.html(renderedHTML);
@@ -18,6 +19,19 @@ BonesApp.Views.BoneView = Backbone.View.extend({
   },
   deleteBone: function(){
     this.model.destroy();
+    return this;
+  },
+  editBone: function(){
+    var that = this;
+    this.$el.html(this.editBoneTemplate(this.model.attributes));
+    this.$el.find('form').on('submit', function(event){
+      event.preventDefault();
+      var nameField = that.$el.find('.edit-name');
+      var newName = nameField.val();
+      var sizeField = that.$el.find('.edit-size');
+      var newSize = sizeField.val();
+      that.model.set({name: newName, size: newSize});
+    });
     return this;
   }
 });
